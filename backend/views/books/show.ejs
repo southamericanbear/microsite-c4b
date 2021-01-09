@@ -1,0 +1,40 @@
+<h2 class="page-header" style="text-align: center;">
+    <%= book.title %>
+</h2>
+<div class="book-details">
+    <div>
+        <img class="book-cover" src="<%= book.coverImagePath %>">
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
+                <a class="btn btn-primary book-deatails-author-button" href="/authors/<%= book.author.id %>">View
+                    Author</a>
+        </div>
+    </div>
+
+
+
+    <div class="book-details-grid"
+        style="font-family: var(--lato); background-color: rgba(221, 221, 221, 0.842); padding: 10px; border-radius: 15px;">
+        <div class="book-details-label">Author:
+        </div>
+        <div>
+            <%= book.author.name %>
+        </div>
+        <div class="book-details-label">Primary color:
+        </div>
+        <div>
+            <%= book.primaryColor %>
+        </div>
+        <div class="book-details-label">Secondary Color:
+        </div>
+        <div>
+            <%= book.secondaryColor %>
+        </div>
+        <div class="book-details-label">Description:
+        </div>
+        <div>
+            <%= book.description %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<h2 class="page-header" style="text-align: center;"><%= author.name %></h2>
+
+
+<div class="book-details author-details" style="margin-bottom: 35px;">
+    <div class="author-container">
+        <img width="250" height="350" src="<%= author.authorImagePath %>" alt="">
+
+        <div class="btn-row btn-row-author">
+            <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm',
+                  { url: `/authors/${author.id}` }) %>
+        </div>
+    </div>
+
+
+
+    <div class="book-details-grid author-details-grid">
+        <div class="bio">
+            <div class="book-details-label">Bio:
+            </div>
+            <div
+                style="font-family: var(--lato); background-color: rgba(221, 221, 221, 0.842); padding: 10px; border-radius: 15px;">
+                <%= author.bio %></div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<% if (booksByAuthor.length > 0) { %>
+<h2 class="page-header">Books By Author</h2>
+<%- include('../partials/bookGrid', { books: booksByAuthor }) %>
+<% } %>

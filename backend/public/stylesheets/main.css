@@ -1,0 +1,80 @@
+@import "shared/header.css";
+@import "shared/buttons.css";
+@import "shared/form.css";
+@import "shared/authors.css";
+@import "shared/books.css";
+
+:root {
+  --roboto-slab-font: "Roboto Slab", serif;
+  --lato: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-family: var(--roboto-slab-font);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.inner-container {
+  background: rgba(233, 233, 233, 0.856);
+  margin: 0 2rem;
+  padding: 30px;
+  border-radius: 15px;
+  border: solid 1px rgba(155, 155, 155, 0.856);
+}
+
+.page-header {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.error-message {
+  color: red;
+}
+
+.cover-author,
+.title-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-author span {
+  font-size: 1.2rem;
+}
+
+.cover-author a {
+  text-decoration: none;
+  color: black;
+}
+
+.cover-author a:hover {
+  color: orange;
+}
+
+.title-author a {
+  margin-top: 5px;
+}
+
+.book-name-index {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 300;
+}

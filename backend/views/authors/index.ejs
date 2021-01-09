@@ -1,0 +1,30 @@
+<h2 class="page-header">Search Authors</h2>
+<form action="/authors" method="GET">
+    <div class="form-row">
+        <div class="form-item">
+            <label for="">Name</label>
+            <input type="text" name="name" value="<%= searchOptions.name %> ">
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+<div class="book-grid  <%= bookGridClass %>">
+    <% authors.forEach(author => { %>
+
+    <div class="author-container">
+        <div class="author">
+            <img width="150" height="300" class="search-author-img" src="<%= author.authorImagePath %> " alt="">
+            <div class="name-and-view">
+                <div style="font-size: 1.2rem; margin: 5px auto;"><%= author.name %> </div>
+                <div class="btn-row">
+                    <a class="btn btn-primary btn-search-author" href="/authors/<%= author.id %> ">View</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <% }) %>
+
+</div>
